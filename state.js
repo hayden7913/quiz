@@ -43,7 +43,7 @@ var state = {
 				},
 				{
 					text: "2x",
-					correct: true,
+					correct: false,
 					id: 2
 				},
 				{
