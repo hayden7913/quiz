@@ -1,0 +1,21 @@
+* {
+	background-color: 	#333333;
+	color: white;
+}
+
+.prompt {
+	margin-bottom: 10px;
+}
+
+div {
+	margin-top: 5px;
+}
+
+div .option{
+	display: inline;
+}
+
+.js-submit {
+	margin-top: 10px;
+	padding: 20px;
+}
