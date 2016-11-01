@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+	
 	<form>
 		<div class="js-prompt"></div>
 		<div class="js-option-list"></div>
@@ -30,6 +31,23 @@
 	</form>
 
 	<button class="js-submit">Submit</button>
+	<button class="js-next">Next</button>
+
+	<div class="js-metrics">
+		<div>
+			<span>Problem</span>
+			<span class="js-currProb"></span>
+			<span>of</span>
+			<span class="js-totalProb"></span>
+		</div>
+		<div>
+			<span class="js-numCorrect"></span>	
+			<span>of</span>
+			<span class="js-answered"></span>
+			<span>Correct</span>
+		</div>
+	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="state.js"></script>
 	<script type="text/javascript" src="app.js"></script>

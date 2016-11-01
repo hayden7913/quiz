@@ -15,7 +15,8 @@ div .option{
 	display: inline;
 }
 
-.js-submit {
+button {
 	margin-top: 10px;
 	padding: 20px;
+	width: 100px;
 }
