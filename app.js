@@ -8,7 +8,7 @@ var promptTemplate = (
 
 var optionTemplate = (
 		"<div>"+
-"			<input type='radio' class='js-radio' name='radio-option' > "+
+"			<input type='radio' class='js-radio' name='radio-option' required> "+
 "			<span class='js-option option'></span>"+
 "			<span class='feedback'></span>"+
 "		</div>"
@@ -95,7 +95,7 @@ function renderFeedback(state, radioId,  optListElement){
    }
 
  function renderMetrics(state, currProbElement, numCorrectElement, numAnsweredElement){
- 	currProbElement.text(state.currentProblem);
+ 	currProbElement.text(state.currentProblem + 1);
  	numCorrectElement.text(state.numCorrect);
  	numAnsweredElement.text(state.numAnswered);
 
