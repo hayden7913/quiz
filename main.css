@@ -1,8 +1,6 @@
-* {
-	background-color: 	#333333;
-	color: white;
+body {
+	padding-left: 5%;
 }
-
 .prompt {
 	margin-bottom: 10px;
 }
