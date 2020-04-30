@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Calc Quiz</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
+    <title>Calc Quiz</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<h1>Calculus Fundamentals Quiz</h1>
-	<form>
-		<div class="js-prompt"></div>
-		<div class="js-option-list"></div>
-	</form>
+<section class="js-welcome-page welcome-page">
+    <h1>Welcome to the Calculus Fundamentals Quiz!</h1>
+    <button class="js-start-button">Start</button>
+</section>
+<main class="js-quiz-page quiz-page">
+    <h1>Calculus Fundamentals Quiz</h1>
+    <form>
+        <div class="js-prompt"></div>
+        <div class="js-option-list"></div>
+    </form>
 
-	<button class="js-submit">Submit</button>
-	<button class="js-next">Next</button>
+    <button class="js-submit">Submit</button>
+    <button class="js-next" disabled>Next</button>
 
-	<div class="js-metrics">
-		<div>
-			<span>Problem</span>
-			<span class="js-currProb"></span>
-			<span>of</span>
-			<span class="js-totalProb"></span>
-		</div>
-		<div>
-			<span class="js-numCorrect"></span>	
-			<span>of</span>
-			<span class="js-answered"></span>
-			<span>Correct</span>
-		</div>
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="state.js"></script>
-	<script type="text/javascript" src="app.js"></script>
+    <div class="js-metrics">
+        <div>
+            <span>Problem</span>
+            <span class="js-currProb"></span>
+            <span>of</span>
+            <span class="js-totalProb"></span>
+        </div>
+        <div>
+            <span class="js-numCorrect"></span>
+            <span>of</span>
+            <span class="js-answered"></span>
+            <span>Correct</span>
+        </div>
+    </div>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="state.js"></script>
+<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
 
