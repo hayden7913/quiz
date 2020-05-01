@@ -19,6 +19,6 @@ button {
 	width: 100px;
 }
 
-.quiz-page {
+.quiz-page, .results-page {
 	display: none;
 }

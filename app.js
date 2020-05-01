@@ -8,18 +8,24 @@ var promptTemplate = (
 
 var optionTemplate = (
   "<div>" +
-  "			<input type='radio' class='js-radio' name='radio-option' required> " +
-  "			<span class='js-option option'></span>" +
-  "			<span class='feedback'></span>" +
-  "		</div>"
+  "<input type='radio' class='js-radio' name='radio-option' required> " +
+  "<span class='js-option option'></span>" +
+  "<span class='feedback'></span>" +
+  "</div>"
 );
 
 // State modification
 
-var toggleNextDisabled;
-function makeToggleNextDisabled(buttonEl) {
+var toggleNextAndSubmitDisabled;
+
+function makeToggleNextAndSubmitDisabled(nextButton, submitButton) {
   return function () {
-    buttonEl.prop('disabled', function(i, v) { return !v; });
+    submitButton.prop('disabled', function (i, v) {
+      return !v;
+    });
+    nextButton.prop('disabled', function (i, v) {
+      return !v;
+    });
   }
 }
 
@@ -104,7 +110,7 @@ function renderFeedback(state, radioId, optListElement) {
 function renderMetrics(state, currProbElement, numCorrectElement, numAnsweredElement) {
   currProbElement.text(state.currentProblem + 1);
   numCorrectElement.text(state.numCorrect);
-  numAnsweredElement.text(state.numAnswered);
+  numAnsweredElement.text(" " + state.numAnswered);
 }
 
 function renderAll(
@@ -127,7 +133,7 @@ function handleSubmit(state, optListElement, currProbElement, numCorrectElement,
         incrementCorrect(state, id);
         renderFeedback(state, id, optListElement);
         renderMetrics(state, currProbElement, numCorrectElement, numAnsweredElement)
-        toggleNextDisabled();
+        toggleNextAndSubmitDisabled();
       }
     })
 
@@ -136,9 +142,14 @@ function handleSubmit(state, optListElement, currProbElement, numCorrectElement,
 
 function handleNext(state, promptElement, optListElement, promptTemplate, currProbElement, numCorrectElement, numAnsweredElement) {
   $(".js-next").click(function () {
+    if (state.currentProblem === state.problems.length - 1) {
+      $(".js-quiz-page").css("display", "none");
+      $(".js-results-page").css("display", "block");
+      return;
+    }
     changeProblem(state);
     renderAll(state, promptElement, promptTemplate, optListElement, currProbElement, numCorrectElement, numAnsweredElement);
-    toggleNextDisabled();
+    toggleNextAndSubmitDisabled();
   })
 }
 
@@ -151,23 +162,27 @@ function main() {
   var numAnsweredElement = $(".js-answered");
   var startButtonElement = $(".js-start-button");
   var nextButtonElement = $(".js-next");
+  var submitButtonElement = $(".js-submit");
+  var tryAgainButtonElement = $(".js-try-again-button");
   var welcomePage = $(".js-welcome-page");
   var quizPage = $(".js-quiz-page");
   var totalProb = state.problems.length;
-  toggleNextDisabled = makeToggleNextDisabled(nextButtonElement);
-  // add welcomePageElement
-  // make handleStart func
+  toggleNextAndSubmitDisabled = makeToggleNextAndSubmitDisabled(nextButtonElement, submitButtonElement);
+
   startButtonElement.click(function () {
     welcomePage.css("display", "none");
     quizPage.css("display", "block");
   });
 
-  // for testing
-    welcomePage.css("display", "none");
-    quizPage.css("display", "block");
-  // for testing
+  tryAgainButtonElement.click(function () {
+    state.currentProblem = 0;
+    state.numCorrect = 0;
+    state.numAnswered = 0;
 
-
+    $(".js-results-page").css("display", "none");
+    $(".js-quiz-page").css("display", "block");
+    renderAll(state, promptElement, promptTemplate, optListElement, currProbElement, numCorrectElement, numAnsweredElement);
+  })
 
   $(".js-totalProb").text(totalProb);
   renderAll(state, promptElement, promptTemplate, optListElement, currProbElement, numCorrectElement, numAnsweredElement);
