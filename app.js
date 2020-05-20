@@ -1,5 +1,4 @@
-//State
-
+// Templates
 var promptTemplate = (
   "<div>" +
   "<span class='js-prompt'></span>" +
@@ -15,7 +14,6 @@ var optionTemplate = (
 );
 
 // State modification
-
 var toggleNextAndSubmitDisabled;
 
 function makeToggleNextAndSubmitDisabled(nextButton, submitButton) {
@@ -52,8 +50,7 @@ function incrementCorrect(state, id) {
   }
 }
 
-//Rendering
-
+// Rendering
 function renderOption(optText, optId, template, optAttr) {
   var element = $(template);
   element
@@ -69,7 +66,7 @@ function renderOption(optText, optId, template, optAttr) {
 function renderProblem(state, optListElement, optAttr) {
   var problemsHTML = state.problems[state.currentProblem].choices.map(
     (option, index) =>
-      renderOption(option.text, index, optionTemplate)); //console.log(renderOption(option.text))}
+      renderOption(option.text, index, optionTemplate));
 
   optListElement.html(problemsHTML);
 }
@@ -83,7 +80,6 @@ function renderPrompt(state, promptElement, template) {
 
   promptElement.html(element);
 }
-
 
 function renderFeedback(state, radioId, optListElement) {
   var correctId = findCorrect(radioId, state.currentProblem);
@@ -123,7 +119,6 @@ function renderAll(
 
 
 // Event Handlers
-
 function handleSubmit(state, optListElement, currProbElement, numCorrectElement, numAnsweredElement) {
   $(".js-submit").click(function () {
     $("input").each(function () {
@@ -152,7 +147,6 @@ function handleNext(state, promptElement, optListElement, promptTemplate, currPr
     toggleNextAndSubmitDisabled();
   })
 }
-
 
 function main() {
   var optListElement = $(".js-option-list");
