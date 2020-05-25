@@ -179,6 +179,7 @@ function main() {
     $(".js-results-page").css("display", "none");
     $(".js-quiz-page").css("display", "block");
     renderAll(state, promptElement, promptTemplate, optListElement, currProbElement, numCorrectElement, numAnsweredElement);
+    toggleNextAndSubmitDisabled();
   })
 
   $(".js-totalProb").text(totalProb);
