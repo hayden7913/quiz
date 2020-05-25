@@ -4,42 +4,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!--<meta http-equiv="refresh" content="1" />-->
     <title>Calc Quiz</title>
 </head>
 <body>
 <section class="js-welcome-page welcome-page">
-    <h1>Welcome to the Calculus Fundamentals Quiz!</h1>
-    <button class="js-start-button">Start</button>
+    <h1>Calculus </h1>
+    <h4>Fundamentals Quiz</h4>
+    <button class="js-start-button button-start">Start</button>
 </section>
 <section class="js-results-page results-page">
     <h1>Thanks for completing the Calculus Fundamentals Quiz!</h1>
     <p>You answered <span class="js-numCorrect"></span> out of<span class="js-answered"></span> correct</p>
-    <button class="js-try-again-button">Try Again</button>
+    <button class="js-try-again-button button-start">Try Again</button>
 </section>
 <main class="js-quiz-page quiz-page">
-    <h1>Calculus Fundamentals Quiz</h1>
-    <form>
-        <div class="js-prompt"></div>
-        <div class="js-option-list"></div>
-    </form>
-
-    <button class="js-submit">Submit</button>
-    <button class="js-next" disabled>Next</button>
-
-    <div class="js-metrics">
-        <div>
-            <span>Problem</span>
-            <span class="js-currProb"></span>
-            <span>of</span>
-            <span class="js-totalProb"></span>
-        </div>
-        <div>
+    <h1>Calculus Quiz</h1>
+    <div class="problem-number">
+        <span>Problem</span>
+        <span class="js-currProb"></span>
+        <span>of</span>
+        <span class="js-totalProb"></span>
+    </div>
+    <div class="quiz-container">
+        <form class="quiz">
+            <div class="js-prompt prompt"></div>
+            <div class="js-option-list"></div>
+            <button class="js-submit button-submit">Submit</button>
+            <button class="js-next button-next" disabled>Next</button>
+        </form>
+    </div>
+        <div class="correct">
             <span class="js-numCorrect"></span>
             <span>of</span>
             <span class="js-answered"></span>
             <span>Correct</span>
         </div>
-    </div>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="state.js"></script>

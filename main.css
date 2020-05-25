@@ -1,34 +1,147 @@
-body {
-	padding-left: 5%;
-}
-.prompt {
-	margin-bottom: 10px;
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 div {
-	margin-top: 5px;
+    margin-top: 5px;
 }
 
-div .option{
-	display: inline;
+div .option {
+    display: inline;
+}
+
+main, section {
+    padding-top: 30px;
+    background-color: lightseagreen;
+    height: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 500;
 }
 
 button {
-	margin: 20px 0;
-	padding: 10px;
-	width: 100px;
-	background-color: #e7e7e7;
-	color: black;
-    border: 1px solid grey;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    width: 110px;
+    margin: 20px 0;
+    margin-right: 10px;
+    padding: 15px 0;
+    background-color: lightseagreen;
+    font-size: .9em;
+    font-weight: 500;
 }
 
 button:disabled,
-button[disabled]{
-	border: 1px solid #999999;
-	background-color: #cccccc;
-	color: #666666;
+button[disabled] {
+    background-color: #E5E5E5;
+    color: rgba(0, 0, 0, 0.2);;
+
+    box-shadow: none;
 }
 
-.quiz-page, .results-page {
-	display: none;
+.button-start {
+  background-color: white;
+  color: lightseagreen;
+  font-size: 1em;
+  width: 120px;
 }
+
+.welcome-page {
+    padding-top: 10vh;
+}
+
+.welcome-page > h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.welcome-page > h4 {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.quiz-container {
+    padding-top: 30px;
+    padding-bottom: 15px;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    max-width: 500px;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.quiz {
+    color: #333333;
+    text-align: left;
+    display: inline-block;
+}
+
+.option-wrap {
+    margin: 15px 0;
+}
+
+.problem-number, .correct {
+    font-weight: 500;
+}
+
+.prompt {
+    padding-bottom: 18px;
+    font-size: 1.1em;
+}
+
+.option {
+    margin-right: 10px;
+}
+
+
+.quiz-page, .results-page {
+    display: none;
+}
+
+.results-page {
+    padding: 10px;
+}
+
+.prompt {
+    margin: 10px 0;
+}
+
+/*test*/
+/*.results-page {*/
+    /*display: block;*/
+/*}*/
+
+/*.quiz-page {*/
+    /*display: none;*/
+/*}*/
+
+/*.js-welcome-page {*/
+    /*display: none;*/
+/*}*/
+
+/*test*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

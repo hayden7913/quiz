@@ -6,7 +6,7 @@ var promptTemplate = (
 );
 
 var optionTemplate = (
-  "<div>" +
+  "<div class='option-wrap'>" +
   "<input type='radio' class='js-radio' name='radio-option' required> " +
   "<span class='js-option option'></span>" +
   "<span class='feedback'></span>" +
@@ -99,7 +99,7 @@ function renderFeedback(state, radioId, optListElement) {
     .closest("div")
     .find(".feedback")
     .text("Correct")
-    .css("color", "green");
+    .css("color", "#3cb356");
 
 }
 
@@ -136,12 +136,15 @@ function handleSubmit(state, optListElement, currProbElement, numCorrectElement,
 }
 
 function handleNext(state, promptElement, optListElement, promptTemplate, currProbElement, numCorrectElement, numAnsweredElement) {
-  $(".js-next").click(function () {
+  $(".js-next").click(function (event) {
+    event.preventDefault();
+
     if (state.currentProblem === state.problems.length - 1) {
       $(".js-quiz-page").css("display", "none");
       $(".js-results-page").css("display", "block");
       return;
     }
+
     changeProblem(state);
     renderAll(state, promptElement, promptTemplate, optListElement, currProbElement, numCorrectElement, numAnsweredElement);
     toggleNextAndSubmitDisabled();
